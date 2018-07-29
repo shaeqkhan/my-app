@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 import ListFriends from './ListFriends'
-import AddingTheFriend from './AddFriend'
+import AddFriend from './AddFriend'
+import Clock from './Clock'
 
 class HelloUser extends React.Component {
 
@@ -14,6 +15,7 @@ class HelloUser extends React.Component {
             name: 'Shaeq Khan',
             friends: ['Omar Khan', 'Sohaib Khan', 'Ibrahim Khan'] 
         }
+
         this.addFriends = this.addFriends.bind(this)
 
     }
@@ -29,8 +31,9 @@ class HelloUser extends React.Component {
         return (
         <div>
             Hello, {this.state.name} <br /><br />
-            <AddingTheFriend addNew={this.addFriends} /> <br /><br />
+            <AddFriend addNew={this.addFriends} /> <br /><br />
             <ListFriends friends={this.state.friends} />
+            <Clock />
         </div>
         );
     }
